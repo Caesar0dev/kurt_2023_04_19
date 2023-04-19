@@ -1,0 +1,25 @@
+#certalink {
+  font-family: "Segoe UI", "Helvetica Neue", Arial;
+  height: 100%;
+}
+
+html {
+  overflow: hidden !important;
+}
+
+.addon_sidebar {
+  overflow: hidden !important;
+}
+
+/*** FOOTER ***/
+footer {
+  height:36px;
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  position:absolute;
+  bottom:0;
+  width: 100%;
+  background: #dadce0 !important;
+  z-index: 1000;
+}

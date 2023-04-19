@@ -1,0 +1,48 @@
+{
+  "name": "CertaLink Gmail sidebar for noCRM",
+  "description": "Certalink puts your critical noCRM lead data right where you live - in Gmail ",
+  "version": "1.1.31",
+  "background": {
+    "service_worker": "index.js"
+  },
+  "action": {
+    "default_title": "CertaLink"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; frame-src 'self' https://portal.certalink.com/version-test https://mail.google.com;"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "gmail/inboxsdk.js",
+        "gmail/script.js"
+      ],
+      "css": [
+        "gmail/style.css"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "resources/images/nocrm16.png",
+    "32": "resources/images/nocrm32.png",
+    "48": "resources/images/nocrm48.png",
+    "128": "resources/images/nocrm128.png"
+  },
+  "web_accessible_resources": [{
+    "resources": ["pageWorld.js","gmail/markup.html","resources/images/nocrm16.png","resources/images/nocrm48.png","resources/images/nocrm32.png","resources/images/nocrm128.png"],
+    "matches": ["<all_urls>"]
+  }],
+
+  "permissions": [
+    "storage"
+  ],
+
+  "host_permissions": [
+    "https://mail.google.com/"
+  ],
+  "manifest_version": 3
+}
